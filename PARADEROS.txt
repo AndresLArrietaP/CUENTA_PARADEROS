@@ -77,6 +77,15 @@ bajddes(Y, ListaPersonas) :-
 contar(Lista, N) :-
     length(Lista, N).
 
+cantidadsubdes(Lista,N) :- subdes(Lista,Y),contar(Y, N).
+cantidadsubddes(Lista,N) :- subddes(Lista,Y),contar(Y, N).
+cantidadbajante(Lista,N) :- bajante(Lista,Y),contar(Y, N).
+cantidadbajaante(Lista,N) :- bajaante(Lista,Y),contar(Y, N).
+cantidadsubante(Lista,N) :- subante(Lista,Y),contar(Y, N).
+cantidadsubaante(Lista,N) :- subaante(Lista,Y),contar(Y, N).
+cantidadbajdes(Lista,N) :- bajdes(Lista,Y),contar(Y, N).
+cantidadbajddes(Lista,N) :- bajddes(Lista,Y),contar(Y, N).
+
 % Regla para obtener las personas que quedan en un paradero dado
 quedan_en_paradero(Personas, Paradero) :-
     findall(Persona, (sube(P, Persona), despues(Paradero,P), \+ baja(P, Persona)), Personas).
